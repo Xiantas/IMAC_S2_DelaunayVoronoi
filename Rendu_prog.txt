@@ -1,0 +1,57 @@
+Mattéo MOULAT
+Zacharie PAIN
+
+IMAC 1 - Programmation et algorithmique II - Projet
+
+
+Premièrement, les conteneurs list, vector, deque et map sont des structures de
+données de C++. Une structure de données est une manière d'organiser, de
+stocker des données. Et selon ce que l'on veut faire, il est plus approprié
+d'utiliser telle ou telle structure.
+
+
+Par la suite, nous allons pour chacun des containers list, vector, deque et
+map, vous décrire leur fonctionnement, leurs avantages, leurs inconvénients et
+donner un exemple d'utilisation de chacun.
+
+
+	- LIST
+Dans une liste doublement chaînée, les différents éléments sont stockés de
+façon isolée dans la mémoire et contiennent, en plus de leur valeur, un pointeur
+vers l'élément suivant et précédent.
+L'objets LIST en lui-même ne contient donc qu'un pointeur vers le premier et le
+dernier éléments.
+La liste permet de facilement rajouter des éléments à un endroit quelconque, par
+un simple jeu de pointeurs, cependant l'accès à un éléments particulier se fait
+en O(n).
+
+	- VECTOR
+A proprement parler, le vecteur est un pointeur vers une plage mémoire, dont il 
+connait la taille. Pour des raisons de performance, un vecteur contient une taille
+et une capacité, afin de ne pas réallouer de la mémoire à chaque aggrandissement
+du vecteur.
+Le vecteur accède rapidement à un élément quelconque, en O(1), et peut très vite
+grandir par la queue, notament grâce à la capacité. Cependant, rajouter des éléments
+plus proches du début entraine une copie en mémoire qui peut être lourde comparé
+à une liste chaînée
+Dans les faits, les processeurs modernes, équipés de caches mémoire sont beaucoup
+plus performants pour traiter des vecteurs que des listes chaînées. Il s'agit du
+conteneurs standard en programmation.
+
+	-DEQUE (Double Ended QUEue)
+Il s'agit d'un mélange entre un vecteur et une liste chaînée, une liste chaînée
+de vecteurs en quelque sorte. En effet, les éléments sont sockés par différents
+blocks de mémoire reliés entre eux.
+Ce conteneur, d'usage relativement restraint est particulièrement utile dans le
+cadre de d'une large quantité de données dans laquelle les insertions et
+suppressions sont faites à des endroits variés.
+
+	- MAP
+Une map repose sur un système de clefs et de valeurs. Les éléments, au lieu
+d'être indicés par des entiers comme c'est le cas dans un vecteur peuvent être
+indicés par des types quelconques, sans avoir besoin que le clefs se suivents.
+Dans leur fonctionnement interne, une map est optimisée pour que la recherche
+soit faite rapidement. A noter que malgrès une complexité théorique faible, le
+traitement des éléments reste relativement lent.
+Mais les maps sont particulièment utiles dans un grand échantillon de données,
+qui ne sont pas stockée de façon ordonnée.
